@@ -54,4 +54,4 @@ print(quote[::3]) #skipping 3 values until the end
 
 ##Reversing##
 print(quote[::-1]) #reverse the string
-done
+done s
