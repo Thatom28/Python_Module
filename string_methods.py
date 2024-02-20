@@ -12,3 +12,20 @@ print(msg2.strip("-")) # removes the - from the string
 print(msg2.lstrip("-")) # removes the - from the left side
 print(msg2.rstrip("-")) # removes the - from the right side
 print(msg2.find("are")) #returns index of "are" returns the index of the first match
+
+print(msg2.strip("-*")) # removes the - and * from the string
+
+print(msg2.replace("are" , "is")) #replaces are with is, if you return the string it will return the original string
+
+# strings are case sensitive
+print(msg2.count("are")) #= 1
+print(msg2.count("Are")) #= 0
+print(msg2.startswith("d")) #= True
+print(msg2.endswith("D")) #= False
+
+print(len(msg2)) #to get the legth of the string
+
+print(msg2.islower())  #retur a boolean to check if the text is in lower case
+###integers
+badge_num = "3453"
+print(badge_num.isdigit()) #= True
