@@ -34,13 +34,13 @@
 #print("=" * int(n) + " " * int(empty) + " " + str(value) + "%")
 
 ##Yolanda  solution
-#num = input("Enter a number ")
-#num1 = int(num) // 10
-#spaces = 10 - num1
-#eq = "=" * num1
-#sp = " " * spaces
-#print(f"{spaces} spaces left")
-#print("["+str(eq)+ sp +"] "  + num + "%")
+num = input("Enter a number ")
+num1 = int(num) // 10
+spaces = 10 - num1
+eq = "=" * num1
+sp = " " * spaces
+print(f"{spaces} spaces left")
+print("["+str(eq)+ sp +"] "  + num + "%")
 
 #####SLICING###
 quote= "I love python"
@@ -54,4 +54,3 @@ print(quote[::3]) #skipping 3 values until the end
 
 ##Reversing##
 print(quote[::-1]) #reverse the string
-done s
