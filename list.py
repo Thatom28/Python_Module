@@ -10,22 +10,55 @@ avarage = [100, 90, 80, 70, 60, 50]
 # print(marks[0:-3]) #same as above
 # print(marks)
 
-#removing an item on the list (removing 40)
-# marks.remove(40)    #changes teh array
+#removing an item on the list (removing 40)(specify the value)
+# marks.remove(40)    #changes the array
 # print(marks)
 
-#adding an item to the list (adds to the end)
-eng = 88
-marks.append(eng)        #Muatates
-print(marks)
+#Removing t he item using remove function (specify the index))
+print(marks.remove(2))
 
-#inserting to a speciifc index
-marks.insert(2,eng)  # (the index, the value to insert)
-print(marks)
 
-print( marks * 2) #prints the list twice
+# #adding an item to the list (adds to the end)
+# eng = 88
+# marks.append(eng)        #Muatates
+# print(marks)
+
+# #inserting to a specific index
+# marks.insert(2,eng)  # (the index, the value to insert)
+# print(marks)
+
+# print( marks * 2) #prints the list twice
 
 #duplicating list
-print(marks * 3)
+#print(marks * 3)
+
 # adding two list together (combining them)
-print(marks + avarage) #98, 75, 40, 45, 80, 60, 100, 90, 80, 70, 60, 50
+#print(marks + avarage) #98, 75, 40, 45, 80, 60, 100, 90, 80, 70, 60, 50
+
+# Making a copy of a list, when you have a copy, whatever you add to the copy and to the original will reflect to the otherlist because they POINT TO THE SAME MEMORY (stores the memory address not the value)
+# marks_copy = marks.copy()
+# marks_copy.append(43)
+# marks.append(99)
+# print(marks_copy)
+# print(marks)
+
+# #Lists that have different memory pointers
+# marks1 = [100, 200, 300]    #this will not be changes by the changes in marks list
+
+#marks -> stores the first item memory address ( 0 )
+
+#Creating copy of the adress using slice
+price_list =[1000, 1500,200]
+price_list_copy = price_list[:]
+
+price_list.append(43)
+price_list_copy.append(99)
+
+print(price_list_copy, price_list )
+
+#Join funstions
+subjects=["eng", "math", "science"]
+print(" ,".join(subjects))
+
+#sorting a list
+print(subjects.sort(reverse=True))
