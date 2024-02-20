@@ -54,9 +54,10 @@ avengers = [
 ]
 #count the letter 
 # word_count = [len(avenger) for avenger in avengers ]
-# if(word_count >= 10):
-#   print(avenger)
 # print(word_count)
 
-#count the letters
-
+# #count the letters
+word_count = [len(avenger) for avenger in avengers ]
+for i in range(len(avengers)):
+  if(word_count[i] >= 10):  #check the legth of the name at each index
+    print(avengers[i])
