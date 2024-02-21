@@ -3,7 +3,7 @@ marks = [98, 75, 40, 45, 80, 60]
 avarage = [100, 90, 80, 70, 60, 50]
 
 # print(marks)
-# print(marks.pop(3))  # removes the last element in the list  #mutate
+# print(marks.pop(3))  # removes the last element in the list unless you secify the index #mutate
 # lenth = len(marks)
 # print(lenth)
 # print(marks[0: len(marks) -3])  #slicing the integers cutting the last 3 integers, does not change the original list
