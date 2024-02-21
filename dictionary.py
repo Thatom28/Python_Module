@@ -21,9 +21,9 @@ print(person) #To get the age and add 1
 #Iterable -> list, tuple, dict_keys
 print(person.keys())  #shows the keys : name, age, country, sport
 print(person.values())  #shows the values : Siya Kolisi, 32, South Africa, Ruby
-print(person.items())   #gives you the tuple (name, Siya Kolisi)) (Used with a for loop)
+print(person.items())   #gives you the list of tuple (name, Siya Kolisi)) (Used with a for loop)
 
-for details in person.items():
+for details in person.items():  #returns the list of keys and values
   print(details)
 #IMPROVED
 for key, value in person.items():
