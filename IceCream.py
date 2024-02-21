@@ -24,7 +24,7 @@ flavour =input("enter your flavour: ")
 #Refactoring the code
 
 #Task 3
-shop_stock = "vanilla, lime, chocolate"
+shop_stock = ["vanilla, lime, chocolate"]
 # print("yes, we have it") if flavour in shop_stock else print("No, we ran out of stock")
 # or
 result = "yes, we have it" if flavour in shop_stock else "No, we ran out of stock"

@@ -38,6 +38,7 @@
 # #   player_status_copy[i] = player_status_copy[i] * 2
 # # print(player_stats, player_status_copy)
 
+##The better way to do it
 # for stat in player_stats:
 #   print(stat)
 #   powered_up_stats = [stats * 2 for stat in player_stats ]
@@ -61,3 +62,11 @@ word_count = [len(avenger) for avenger in avengers ]
 for i in range(len(avengers)):
   if(word_count[i] >= 10):  #check the legth of the name at each index
     print(avengers[i])
+
+##Better solution
+filter_name =[avenger.upper() for avenger in avengers if len(avenger) >= 10]
+print(filter_name)
+
+##To et the lenth of each item in the array
+# for avenger in avengers:
+#   print(len(avenger))
