@@ -35,7 +35,9 @@ print(marks.remove(2))
 # adding two list together (combining them)
 #print(marks + avarage) #98, 75, 40, 45, 80, 60, 100, 90, 80, 70, 60, 50
 
-# Making a copy of a list, when you have a copy, whatever you add to the copy and to the original will reflect to the otherlist because they POINT TO THE SAME MEMORY (stores the memory address not the value)
+#Using .copy does not point to the same memory as the original list, changes in both the original and the copy does not affect the other
+# NOT TOO SURE ->Making a copy of a list, when you have a copy, whatever you add to the copy and 
+#the original will reflect to the otherlist because they POINT TO THE SAME MEMORY (stores the memory address not the value)
 # marks_copy = marks.copy()
 # marks_copy.append(43)
 # marks.append(99)
