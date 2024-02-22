@@ -26,6 +26,8 @@ flavour =input("enter your flavour: ")
 #Task 3
 shop_stock = "vanilla, lime, chocolate"
 # print("yes, we have it") if flavour in shop_stock else print("No, we ran out of stock")
-# or
+# or using a ternary operator
 result = "yes, we have it" if flavour in shop_stock else "No, we ran out of stock"
 print(result)
+
+print("yes we do have it" if flavour in shop_stock else "no, we do not have it")
