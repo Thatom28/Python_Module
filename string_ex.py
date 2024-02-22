@@ -44,3 +44,7 @@ remove_junk = output.strip("*").strip(")")  #REFINED
 print(remove_junk)
 
 #Dot chaining continues when you are still in string
+replaced_code = message.replace("secret", "🙈")
+print(replaced_code)
+reversed_code = message[::-1]    #you have created a new string that contains reverse string
+print(reversed_code)

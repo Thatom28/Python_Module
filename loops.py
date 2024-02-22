@@ -6,16 +6,22 @@
 #   i = i + 1
 # Task 1
 
-# rows = int(input("enter numebr of rows: "))
-# i = 1
+rows = int(input("enter numebr of rows: "))
+i = 1
 
-# while i <= rows:
-#   print("😊 " * i)
-#   i = i+1
+while i <= rows:
+  print("😊 " * i)
+  i = i+1
+
+#---------Task 2 IMPROVED
+# rows2 = int(input("enter numebr of rows: "))
+
+# for i in range(1, rows2 + 1):
+#    print("😊 " * i)
 
 
-# for i in range(3):   #writes from zero to 2
-#   print(i)
+for i in range(3):   #writes from zero to 2
+  print(i)
 
 # for i in range(1, 3):   #writes from 1, 2 (does nor incude the last one) #the range should be a int therefore tou cant give it a list
 #   print(i)
@@ -23,12 +29,6 @@
 # for i in range(1, 50, 2):   #writes from 1, 3, 5, 7... (does nor incude the last one)
 #      print(i)
 
-#Task 2
-# rows2 = int(input("enter numebr of rows: "))
-# i = 1
-
-# for i in range(1, rows2 + 1):
-#    print("😊 " * i)
 
 #Task 3 (multiply each index by 2))
 # player_stats =[10, 30, 60]
@@ -53,6 +53,9 @@ avengers = [
     "Spider man",
     "Thor",
 ]
+
+for avanger in avengers:
+  print(len(avengers))
 #count the letter 
 # word_count = [len(avenger) for avenger in avengers ]
 # print(word_count)
@@ -70,3 +73,8 @@ print(filter_name)
 ##To et the lenth of each item in the array
 # for avenger in avengers:
 #   print(len(avenger))
+
+#--List comprehension
+player_stats =[10, 30, 60]
+stats = [stat*2 for stat in player_stats]
+print(stats)

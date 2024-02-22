@@ -29,3 +29,5 @@ shop_stock = ["vanilla, lime, chocolate"]
 # or
 result = "yes, we have it" if flavour in shop_stock else "No, we ran out of stock"
 print(result)
+
+print("yes we do have it" if flavour in shop_stock else "no, we do not have it")
