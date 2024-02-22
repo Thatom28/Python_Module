@@ -31,7 +31,7 @@ print(outdoor_activity.intersection(indoor_activity)) #cycling
 
 print(outdoor_activity.union(indoor_activity)) #hiking, cycling, swimming, reading, gaming
 
-print(indoor_activity.difference(outdoor_activity)) #hiking, swimming
+print(indoor_activity.difference(outdoor_activity)) #hiking, swimming (what is different in 1 from 2)
 
 print(outdoor_activity.symmetric_difference(indoor_activity)) #Hiking, swimming, gaming, reading
 #-----------------------------------
@@ -48,4 +48,45 @@ for color in colors:
   set2.add(color)
 print(set2)
 
-print(list(set(colors)))  #to convert to a list
+print(list(set(colors))) #to convert to a list
+#--------------------Activity-----------------
+outdoor_activities = {'Hiking', 'Cycling', 'Swimming'}
+indoor_activities = {'Gaming', 'Reading', 'Cycling'}
+activity_gadgets = {'Smartwatch': 'Hiking', 'VR Headset': 'Gaming', 'Smartphone': 'Reading', 'Drone': 'Cycling'}
+
+# ---------Task 1
+outdoor_gadgets = set()
+indoor_gadget = set()
+# for key, value in activity_gadgets.items():
+#   if value in outdoor_activity:
+#     outdoor_gadgets.add(key)
+#   elif value in indoor_activities:
+#     indoor_gadget.add(key)
+    
+# print(f"indoor gadget: {indoor_gadget}")
+# print(f"outdoor gadgets: {outdoor_gadgets}")
+
+# ---------Task 3: make it neat
+# gadget = set()
+# def getGadgetSet (activity_gadgets, activities):
+#   for gadget, activity in activity_gadgets.items():
+#     if activity in activities:
+#       gadget.add(gadget)
+# print(getGadgetSet(activity_gadgets, indoor_activities))
+# print(getGadgetSet(activity_gadgets, outdoor_activities))
+
+# ---------Task 4:set comprehension
+
+def getGadgetSet (activity_gadgets, activities):
+  gadget = set()
+  for gadget, activity in activity_gadgets.items():
+    gadget.add(gadget for gadget in activity_gadgets if activity in activities)
+print(getGadgetSet(activity_gadgets, indoor_activities))
+
+#-------corrections
+def getGadgetSet (activity_gadgets, activities):
+ return gadget = {gadget for gadget,activity in activity_gadgets if activity in activities }
+  
+
+
+

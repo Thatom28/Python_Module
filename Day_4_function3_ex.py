@@ -53,14 +53,16 @@ author_books = {}
 
 #-----------------TASK 3 check avaliabillity-----------------
 #you can modify the if statements
-def find_avaliabbillity(library, title):
-  for book in library:
-    if(book["title"] == title and book["available"]):
-      book["available"] = False
-      return f"The book {title} is avaliable, successfully checked out"
-    elif(book["title"] == title and book["available"] == False):
-      return "Book not avaliable"
-    else:
-      return f"{title} is not avaliable in the library"
+# def find_avaliabbillity(library, title):
+#   for book in library:
+#     if(book["title"] == title and book["available"]):
+#       book["available"] = False
+#       return f"The book {title} is avaliable, successfully checked out"
+#     elif(book["title"] == title and book["available"] == False):
+#       return "Book not avaliable"
+#     else:
+#       return f"{title} is not avaliable in the library"
    
-print(find_avaliabbillity(library, "Fluent "))  
+# print(find_avaliabbillity(library, "Fluent "))  
+
+#--------------------------
