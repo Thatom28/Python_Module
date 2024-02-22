@@ -10,7 +10,7 @@ flavour =input("enter your flavour: ")
 #else:
 #   print("No, we ran out of stock")
 
-#task 2
+#task 2 using membership operator
 #shop_stock = "vanilla, lime, chocolate"
 #if (flavour in shop_stock):        #to check if the input string is in the shop_stock string, you can                             check even separate wods in the string i.e. " lla, li" it will return true.
 # print("yes, we do have it")
