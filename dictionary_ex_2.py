@@ -39,7 +39,7 @@ movie = {
   "name": "Mr bones",
   "year": 2001
 }
-movie_copy1= movie.copy()
+movie_copy1= movie.copy()   #cannot add anything else
 
 #unpackiing operator to copy a dictionary
 movie_copy2 ={**movie, "rating": 5}   #you can add other keys, the mr bones movie will have a ratings tab

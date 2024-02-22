@@ -21,30 +21,33 @@
 # print(t1, t2, t3)
 
 #UNPACK
-c1, c2, c3, c4 = coordinates 
-dist1 = (c1[0]**2 + c1[1]**2)**0.5
-dist2 = (c2[0]**2 + c2[1]**2)**0.5 
-dist3 = (c3[0]**2 + c3[1]**2)**0.5
-dist4 = (c4[0]**2 + c4[1]**2)**0.5
-print(dist1, dist2, dist3, dist4)
+# c1, c2, c3, c4 = coordinates 
+# dist1 = (c1[0]**2 + c1[1]**2)**0.5
+# dist2 = (c2[0]**2 + c2[1]**2)**0.5 
+# dist3 = (c3[0]**2 + c3[1]**2)**0.5
+# dist4 = (c4[0]**2 + c4[1]**2)**0.5
+# print(dist1, dist2, dist3, dist4)
 
-import math
+# import math
 
-coordinates =[(5, 4), (1, 1), (6, 10), (9, 10)]
+# coordinates =[(5, 4), (1, 1), (6, 10), (9, 10)]
 
-distance = []
-for dis in coordinates:
-  print(dis)
-  x, y = dis
-  dis = math.sqrt (x**2 + y**2)
-  #math.sqrt (dis[0]**2 + dis[3]**2)
-  distance.append(dis)
-print(distance)
+# distance = []
+# for dis in coordinates:
+#   print(dis)
+#   x, y = dis
+#   dis = math.sqrt (x**2 + y**2)
+#   #math.sqrt (dis[0]**2 + dis[3]**2)
+#   distance.append(dis)
+# print(distance)
 
-#IMPROVED CODE using tuple unpacking directly within the loop
-for x, y in coordinates:
-  distance.append(math.sqrt(x**2 + y**2))
-print(distance)
+# #IMPROVED CODE using tuple unpacking directly within the loop
+# for x, y in coordinates:
+#   distance.append(math.sqrt(x**2 + y**2))
+# print(distance)
 
-#USING LIST COMPREHESION
-distances =[math.sqrt(x**2 + y**2) for x,y in coordinates]
+# #USING LIST COMPREHESION
+# distances =[math.sqrt(x**2 + y**2) for x,y in coordinates]
+
+t1, t2, *_,t3 = (100, 200, 300, 400, 60, 40, 30) #skips all the values *_
+print(t1, t2, t3)
