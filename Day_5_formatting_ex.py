@@ -35,4 +35,9 @@ print(f"Serves: {recipe['servings']} people")
 guests = ["Alice", "Bob", "Charlie"]
 party_date = datetime(2024, 3, 14)
 for guest in guests:
-  print(f"{guest:^33} you are invited to the party on {party_date}!")
+  print(f"{guest:^33} you are invited to the party on {party_date:%m-%d-%y}!")
+
+#-----------multi lined string
+about_me= """
+
+"""
