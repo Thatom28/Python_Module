@@ -31,11 +31,6 @@ def list_available_rooms(rooms):
       return avaliable_list
   return "No rooms avaliable"
   
-# def list_available_rooms2(rooms):
-#   avaliable_rooms = [room for room in rooms if room["avaliabillity"]]
-#   return avaliable_rooms
-  
-  
 print(add_room(rooms, room_number = 13, bed_type = "double", smoking = True))
 print(book_room(rooms, "single", False))
 print(list_available_rooms(rooms))
