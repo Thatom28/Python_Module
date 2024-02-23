@@ -4,18 +4,20 @@
 
 #1. assign a function as a variable
 #2. pass a function as an argument
-#3return a function
+#3. return a function
+
+#-----------first example-------(name)(parameters)(function body)
 # add = lambda a, b: a+b
 # print(add(2,3))
 
-# def fun(y):
+# def fun(y):    #function named fun that takes 1 parameter
 #   x=4
 #   return x +y
 
-# print(fun(2))
+# print(fun(2))      # 4+ 2
 
 #map(function, list)
-# double_stats = map(lambda x: x *2, [10,20,30])
+# double_stats = map(lambda x: x *2, [10,20,30])  #[20,40,60]]
 
 # print(list(double_stats))  #return a list
 
