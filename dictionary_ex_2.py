@@ -74,4 +74,5 @@ print(price_copy1)
 
 t1 =[1, 3]
 t2 = [3, 5]
-t3 = [*t1, *t2]
+t3 = [*t1, *t2] #combining the lists
+print(t3)
