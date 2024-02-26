@@ -1,5 +1,8 @@
 #utillity function 
 def to_upper_case(text):
+  """
+  This method will uppercase all characters    #docstring
+  """
   return text.upper()
 
 def to_lower_case(text):
@@ -9,7 +12,7 @@ def to_lower_case(text):
 #__ duntter variables(__main__)
 #to find duntter properties, in shell -> print a list -> dir(list)
 if __name__ == "__main__":
-  print(__name__)    #return string
+  print(__name__, type(__name__))    #return string
   print(to_upper_case("quinlan"))
 ##sharin the file
 

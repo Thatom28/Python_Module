@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime    #built in module
 
 recipe = {
     "name":
@@ -20,7 +20,7 @@ recipe = {
 # - 1 clove garlic
 # Serves: 4 people
 name2 = recipe["name"]
-print(f"{name2:=^33}")
+print(f"{name2:=^33}")    #padding + word
 for ingredient in recipe["ingredients"]:
   print(f" - {ingredient}")
 print(f"Serves: {recipe['servings']} people")

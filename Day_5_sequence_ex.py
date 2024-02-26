@@ -1,3 +1,4 @@
+from pprint import pprint  #to make the prints readiable
 movies = [
     {
         "title": "Inception",
@@ -47,7 +48,7 @@ movies_average_ratings = list(
     }, movies))  # the list it uses
 #-----Or write the calculation indide the map
 # movies_average_ratings = list(map(lambda movie: {**movie, "average":  sum(movie['ratings']) / len(movie['ratings'])}, movies)
-print(movies_average_ratings)
+pprint(movies_average_ratings)
 
 #task 2, to rated movie
 
@@ -59,14 +60,18 @@ print(top_rated_movie["title"])  #output = Dark knght
 list_top_rated = list(
     filter(lambda x: x["average"] >= 4.6, movies_average_ratings))
 title = list(map(lambda x: x["title"], list_top_rated))
-print(title)
+pprint(title)
 
 #-----------Adding language key to movies
 # movie_lang = map(lambda x : {**x, "Language": "English"}, movies)
 # print(list(movie_lang))
 # #-------------------Task 4: order the rating(Home work)
+def getTitle(movie):
+  return movie["title"]
+  
 movie_sort = sorted(movies_average_ratings,
                     key=lambda x: x["average"],
                     reverse=True)
-sorted_movie_title = list(map(lambda x: x['title'], movie_sort))
-print(sorted_movie_title)
+sorted_movie_title = list(map(getTitle, list(movie_sort)))
+top3_movies = ", ".join(sorted_movie_title[:3])
+pprint(top3_movies)
