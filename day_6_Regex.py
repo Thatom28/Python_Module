@@ -53,3 +53,6 @@ capitalized_text = re.sub(r'\w', lambda x: x.group(0).upper(), text)
 swap_text = re.sub(r'(\w+) (\w+)', r'\2 \1', text)
 print(capitalized_text)
 print(swap_text)
+
+groups = re.findall(r'(\w+), (\w+)', 'John, Doe')
+print(groups.groups())
