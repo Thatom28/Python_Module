@@ -11,7 +11,7 @@
 #[a-z]\d  [a-g]  [5-7] match -> a to z followed by a digit
 #[A - Z] match -> A to Z in capital letters
 #\w matches any word character and digits
-#\W matches any non word character
+#\W matches any non word character or digits
 #funnny -> fun{3}y_> matches fun with 3 n's
 #fun{2,5}y -> match fun that has 2 to 5 n's
 #fu[nz]{2}y -> must match fu and any letter not l, the letter must be repeated twice

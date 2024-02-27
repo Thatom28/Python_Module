@@ -18,7 +18,7 @@ print(is_be)  #we use r instead of f in this
 print(output)
 #if a value is not ofund it returns a none
 
-#---------------findAll---------------------
+#---------------findAll: returns all occurances in a list---------------------
 find_be = re.findall('be', qoute)
 print(find_be)   #returns all be 
 
@@ -26,7 +26,7 @@ qoute1="funny funy, funnny fuzzy"
 #use the raw string to ignore the escape character
 find_be2 = re.findall(r'fu[nz]{2}y', qoute1)
 
-#-----------------sub------------------------
+#-----------------sub:------------------------
 #substitute the first match
 tweet ="Spoiler: this movie is great, but the spoiler was unexpected. Avoid sharing spoilers!"
 censor_text=re.sub(r'(spoiler|but)','*'*7, tweet)  #censors "spoiler or "but"
@@ -44,3 +44,12 @@ results2 = re.sub(r'(\w+)(\.com)', r'\2', list_websites)  #the second group will
 results2 = re.sub(r'(\w+)(\.com)', r'\1.subdomain.\2', list_websites)
 print(result)
 
+
+letters = re.findall(r'\w+', 'Python3')
+print(letters)
+
+text = "hello, world"
+capitalized_text = re.sub(r'\w', lambda x: x.group(0).upper(), text)
+swap_text = re.sub(r'(\w+) (\w+)', r'\2 \1', text)
+print(capitalized_text)
+print(swap_text)

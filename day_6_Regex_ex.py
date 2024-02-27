@@ -4,7 +4,7 @@ names = ["John Doe", "Jane Smith", "Alice Johnson", "Chris Evans"]
 
 reversed = []
 for name in names:
-  results = re.sub(r'(\w+)\s(\w+)', r'\2 \1', name)
+  results = re.sub(r'(\w+)\s+(\w+)', r'\2 \1', name)
   reversed.append(results)
 print(reversed)
 
