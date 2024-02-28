@@ -50,9 +50,17 @@ class Bank:
         for dictionary in transaction_list:
             print("\t".join([f"{key}: {value}" for key, value in dictionary.items()]))
 
+    # def transaction_by_name(self, acc_owner):
+    #     for dictionary in transaction_list:
+    #         if self.name == acc_owner:
+    #             print(
+    #                 "\t".join([f"{key}: {value}" for key, value in dictionary.items()])
+    #             )
+
 
 # gemma is an object or instance of bank
 gemma = Bank(123, "Gemma Porrill", 5000)
+Dhara = Bank(123, "Dhara Khara", 8900)
 print(gemma.name)
 
 # ---task 2 display  balance
@@ -60,7 +68,12 @@ print(f"{gemma.display_balance()}")
 
 # ---Task 3
 print(gemma.withdraw(2000))
+print(Dhara.withdraw(2000))
 print(gemma.deposit(7000))
 print(gemma.deposit(900))
-print(gemma.withdraw(1500))
+
+print(Dhara.deposit(7000))
+print(Dhara.deposit(900))
+print(Dhara.withdraw(1500))
 print(gemma.transaction())
+# print(gemma.transaction_by_name("Gemma Porrill"))
