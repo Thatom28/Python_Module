@@ -118,21 +118,22 @@ print(calc1.divide())  # applying the decorator to the divide function
 
 
 # ------------Creating a decorator using a class
-class decorator_class:
-    def __init__(self, func):
-        self.func = func  # returns an instance of the function
+# class decorator_class:
+#     def __init__(self, func):
+#         self.func = func  # returns an instance of the function
 
-    def __call__(self):
-        result = self.func()
-        print(
-            f"the data type of {result} is {type(result)}"
-        )  # type the return type of the function
-        print(f"Converted result to an integer {int(result)}")
-
-
-@decorator_class
-def divide(num1, num2):
-    return num1 / num2
+#     def __call__(self):
+#         result = self.func()
+#         print(
+#             f"the data type of {result} is {type(result)}"
+#         )  # type the return type of the function
+#         print(f"Converted result to an integer {int(result)}")
 
 
-divide(56 / 6)
+# @decorator_class
+# def divide(num1, num2):
+#     print(num1 / num2)
+
+
+# # I would like assistance with this because i get TypeError : that teh fuction only takes one argument
+# divide(56 / 6)
