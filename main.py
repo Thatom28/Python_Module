@@ -33,7 +33,7 @@
 #empty = 10 - n
 #print("=" * int(n) + " " * int(empty) + " " + str(value) + "%")
 
-##Yolanda  solution
+##Y  solution
 num = input("Enter a number ")
 num1 = int(num) // 10
 spaces = 10 - num1
