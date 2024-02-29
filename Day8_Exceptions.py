@@ -60,7 +60,7 @@ def calculate_age1():
     except ValueError:
         print("you cannot calculate a string and int")
         # if you dont know the error you will get
-    except Exception as err: #make an aliase
+    except Exception as err:  # make an aliase
         print("this is catch all", err)
 
 
@@ -69,7 +69,9 @@ class NegetiveNumberError(Exception):
     def __init__(self, value):
         self.value = value
         self.message = "negetive numbers not allowed"
-        super().__init__(self.message)  #pass the self.message to the base class(exception)
+        super().__init__(
+            self.message
+        )  # pass the self.message to the base class(exception)
 
     # Overides to create a custom string representation
     def __str__(self):
@@ -88,4 +90,4 @@ class NegetiveNumberError(Exception):
 
 
 if __name__ == "__main__":
- 
+    only_positive()
