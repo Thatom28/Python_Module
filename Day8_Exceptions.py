@@ -3,14 +3,14 @@ import datetime
 
 # this allws the rest of the file to run
 def math_divide(n1, n2):
-    try:
+    try:  # lets you test a block of code for errors
         result = n1 / n2
     except ZeroDivisionError:  # when error occurs
         print("you cannot divide by zero ❌")
     else:  # if there is no error
         print("you division was successful✅")
     finally:  # always run whether error found or not
-        # useful for closing objects and clean up resources
+        # useful for closing objects and clean up resources like closing files
         print("operation complete")
 
 
