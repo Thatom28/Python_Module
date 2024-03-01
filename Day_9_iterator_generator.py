@@ -65,7 +65,7 @@ class MyRange:
         return self.current - 1  # the current value is changing because it
 
 
-for n in MyRange(1, 5):
+for n in MyRange(1, 5):nums
     print(n)
 
 
