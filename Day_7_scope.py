@@ -1,18 +1,23 @@
 prince = 100
 
+
 def get_price():
     print("the price is : ", prince)
 
-#get_price()
 
-#Lexical scope: the inner loop can use the upper loop but the outer loop cannot use the inner loop
+# get_price()
+
+
+# Lexical scope: the inner loop can use the upper loop but the outer loop cannot use the inner loop
 def market():
     price = 100
+
     def get_price():
-     print("the price is : ", prince)
+        print("the price is : ", prince)
+
 
 get_price()
-#print(market())
+# print(market())
 
 # Scope -Lifetime of a variable, the x cannot be called outside the function
 # def cool():
@@ -22,29 +27,40 @@ get_price()
 # print(x)  # x is not defined
 
 # closure = own scope + lexical scpe
-code_word = 'Hulk'
+code_word = "Hulk"
+
+
 def space_ship():
-   question = "Please provide code word"
+    question = "Please provide code word"
 
-   def code_word_check():
-      password="Hulk"
-      print(question)
+    def code_word_check():
+        password = "Hulk"
+        print(question)
 
-      if (password == code_word):
-         print(f"Welcome , {password} the strogest avenger💪")
-      else: 
-         print("❌Access denied to r🚀")
-      code_word_check()     #you need to call the fuction you defined insdide the function because it does not mean it will automatically run
-   
-#space_ship()
+        if password == code_word:
+            print(f"Welcome , {password} the strogest avenger💪")
+        else:
+            print("❌Access denied to r🚀")
 
-#add1 can be able to accessed because of closure scope
+    code_word_check()  # you need to call the fuction you defined insdide the function because it does not mean it will automatically run
+
+
+space_ship()
+
+
+# add1 can be able to accessed because of closure scope
 def add(x):
-   def add1(y):
-      return x+ y
-   return add1
+    def add1(y):
+        return x + y
 
-#default value copy by reference : all teh fun called will populate the same list, this is reference
+    return add1
+
+
+print(add(2)(7))
+# same as
+add = lambda x: (lambda y: x + y)
+
+# default value copy by reference : all teh fun called will populate the same list, this is reference
 # def fun(nums = []):
 #    nums.append(10)
 #    print(nums)
@@ -70,21 +86,25 @@ def add(x):
 # fun()
 # fun()
 
-def fun(nums = ()):
+
+def fun(nums=()):
     if nums is ():
-        nums.append(10)
+        nums = []
     print(nums)
 
-fun()
-fun()
-
-#solution
-def fun(nums = None):
-   if nums is None:
-    nums = []
-   print(nums)
 
 fun()
 fun()
 
-# == is a binary operator and in is a memory operator 
+
+# solution
+def fun(nums=None):
+    if nums is None:
+        nums = []
+    print(nums)
+
+
+fun()
+fun()
+
+# == is a binary operator and in is a memory operator

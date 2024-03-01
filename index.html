@@ -2,17 +2,18 @@
 <html lang="en">
 <!-- the head will not be in the website, they are for the tbs-->
 <head>
-    <!--self closing tags-->
+    <!--self closing tags meta, img-->
     <!--attributes = src, lang, name-->
     <!--UTD-* -> file encoding supports emoji, japanese, chinese -->
     <meta charset="UTF-8">
     <!--adapt to phone (potrait to landscape)-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- internal css ->used when we want perfomance -->
     <style>
         ul {
             /* hex value #ffffff RGB */
-            /* hsl: Hueue, Saturation, Lightness */
+            /* hsl: Hueue, Saturation, Lightness (more human friendly)*/
             color: blueviolet;
         }
         p{
@@ -23,20 +24,52 @@
             text-align: center;
             text-transform: uppercase ;
         }
+        h2{
+            text-decoration: underline;
+        }
+        h3{
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 10px ;
+            border:5px solid gold;
+        }
+        li{
+            line-height: 2 ;
+        }
+        div{
+            background-color: blue;
+            border-radius: 24px;
+        }
     </style>
+    <!-- External CSS | most preferred because it is reusable and clear-->
+    <link rel"stylesheet href=""style.css />
 </head>
 <!--tags or element-->
 <body>
+    <ul class="nav">
+        <li><a href="https://www.google.com//">Google</a></li>
+        <li><a href="/">Home</a>  <!-- mostly / --></li>
+        <li><a href="/selector.html">selector</a></li>
+    </ul>
     <h1>Hello, Sanlam🤩</h1>
     <h2>Hello, Sanlam🤩</h2>
     <h3>Hello, Sanlam🤩</h3>
     <h4>Hello, Sanlam🤩</h4>
     <h5>Hello, Sanlam🤩</h5>
     <h6>Hello, Sanlam🤩</h6>
-    <p>This is a paragraph🙈🚀</p>
+    <div>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga ex officia 
+            ad doloribus provident. Hic, distinctio earum, soluta natus accusantium illum 
+            dolorem tempora vitae quis voluptas eius dolores modi nemo maxime voluptates iste vero quia similique cumque ut numquam expedita suscipit ad? Harum facere qui atque recusandae voluptates sequi, vel sapiente quam nobis quasi, culpa, id omnis laborum temporibus? Vero ipsam, alias placeat autem itaque ad voluptate fugiat nam nostrum. Sed fugiat architecto hic a repellendus ea dolorem placeat asperiores esse eum molestias nam nisi, ratione id quod explicabo deleniti cum praesentium dolore illo ipsum? Repellat debitis quidem aspernatur nihil.
+       </p>
+       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, fugit.</p>
+    </div>
+    
 
+    <h3>Gucci</h3>
+    <h2>Hobbies</h2>
     <!-- dhortcut for lists -> type ul>li*5 -->
-    <ul>
+    <ul style="color: orange">  #inline CSS
         <li>Gaming</li>
         <li>Running</li>
         <li>Reading</li>
@@ -46,3 +79,6 @@
 </body>
 This is outside the body
 </html>
+
+<!-- when to use padding: when you  -->
+<!-- When to use margin, when yo want to push other items, you can choose the side to makethe gap-->

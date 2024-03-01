@@ -60,7 +60,7 @@ def calculate_age1():
     except ValueError:
         print("you cannot calculate a string and int")
         # if you dont know the error you will get
-    except Exception as err:  # make an aliase
+    except Exception as err:  # make an aliase |
         print("this is catch all", err)
 
 

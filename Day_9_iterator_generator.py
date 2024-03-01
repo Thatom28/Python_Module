@@ -28,7 +28,7 @@
 # # CONCLISION: ALL ITERATORS ARE ITERABLES BUT NOT THE OTHER WAY AROUND, _
 # # because they both have __next_ and __iter__
 # # print(next(nums_iter))
-# # print(next(nums_iter))
+# # print(next(nums_iter))  #Stopiteration error if at the end of list
 # # n = 0
 # # while n <= nums_iter:
 # #     print(next(n))
@@ -50,23 +50,23 @@
 # # | Iterator only remeber sone value | saves memory
 
 
-# class MyRange:
-#     def __init__(self, start, end):
-#         self.current = start
-#         self.end = end
+class MyRange:
+    def __init__(self, start, end):
+        self.current = start
+        self.end = end
 
-#     def __iter__(self):
-#         return self  # because it is an iterator already
+    def __iter__(self):
+        return self  # because it is an iterator already
 
-#     def __next__(self):
-#         if self.current > self.end:
-#             raise StopIteration
-#         self.current += 1
-#         return self.current - 1  # the current value is changing because it
+    def __next__(self):
+        if self.current > self.end:
+            raise StopIteration
+        self.current += 1
+        return self.current - 1  # the current value is changing because it
 
 
-# for n in MyRange(1, 5):
-#     print(n)
+for n in MyRange(1, 5):
+    print(n)
 
 
 # # -----Generators -clean returns an Iterator
