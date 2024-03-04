@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+        margin:0;
+        display: grid;
+        place-content: center;
+        min-height: 100vh;}
+        .box{
+            background: plum;
+            height:400px;
+            width: 400px;
+            /* all the properties of box, transition by 2 seconds */
+            transition: 2s all;
+                     /* change the cursor to a hand */
+         cursor: pointer;
+        }
+        /* psedo classes are fake classes that are used when a user does something */
+        .box:hover{
+            /* doubls the box | moes the box up*/ 
+         transform: scale(1.5) translate(-40px);
+         background: lightblue;
+        }
+
+        /* mouse click */
+        .box:active {
+            background: teal;
+            transform: scale(0.9) rotate(30deg);
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

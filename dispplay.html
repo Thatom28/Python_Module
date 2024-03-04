@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0 px; /*removes the default spaces on the sides*/
+        }
+        .container{
+            background: orange;
+            /* to occupy half */
+            width: 50%;
+        }
+        p{
+            background: purple;
+        }
+        a{
+            background: pink;
+        }
+        .web{
+            
+            height: 400px;
+            width:300px;
+        }
+        .web2{
+            
+            display: block;
+        }
+        .web3{
+            height: 400px;
+            width:300px;
+            /* Respects height and width and side by side */
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <a class="web" href=''>Google.com</a> <!--the link will not expand because they only take the necessary width and height-->
+    
+    <a class="web2" href=''>Google.com</a> <!-- it is now a block elemnt-->
+    
+    <a class="web3" href=''>Google.com</a> <a>link</a>
+    <!--Block elemnts: p, headings, div, ul, ol-->
+     <!--the smaller the font the bigger the line height they will be side byy side because their display is they occupy the full width of the container-->
+     <!--Respects height and width-->
+    <p>para 1</p><p>para 2</p> 
+
+    <!--display: inline : img, links-->
+    <!--only the content width-->
+    <!-- /*inline elements do not respect height and width*/ -->
+    <a>link 1</a>
+    <a>link 2</a>
+ <div class="container">
+    <p>para 1</p><p>para 2</p>
+</div>
+    
+</body>
+</html>
