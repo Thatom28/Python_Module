@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1.0.0 */
+        #cool{
+            color: plum;
+        }
+        /* 0.1.0 */
+        .fun{
+            color: skyblue;
+        }
+        /* 0.0.1 */
+        p{
+            color: crimson;
+        }
+        p{
+            /* he parasgraph will use this color */
+            color:orange
+        }
+        p{
+            color: red !important;
+        }
+    </style>
+</head>
+<body>
+    <p class="fun" id="cool" style="color: teal;">para</p>
+</body>
+</html>
+<!-- Casacde means overriding, this is the nature of css. The last style to the elemt will
+override the previous one -->
+<!-- classes takes priority, the stye in the class will be applied -->
+<!-- ID takes higher precedence over class -->
+<!-- Inline style takes higher precedence than id -->
+<!-- do not use inline and Id because you cant override -->
+<!-- !importaint(UN) > cannot be overriden by anything -->
+<!-- specificity: whenever there is a clash between two styles
+whichone would be given higher priority -->
