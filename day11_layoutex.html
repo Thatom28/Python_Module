@@ -8,42 +8,85 @@
         body{
             color: white;
             margin:0;
-          display: grid;
+           display: grid;
            place-content: center;
            min-height: 100vh;
-           background-color: rgb(11, 2, 11);
+           background-color: #0a0c1b;
+           font-family: sans-serif;
         }
         img{
-            height: 220px;
+            height: 400px;
+            /* opacity: 0.3;
+              filter: alpha(opacity=40); /* msie */
+              background-color: rgb(30, 8, 30); 
+              mix-blend-mode: lighten;
+              border-top-right-radius: 12px;
+              border-bottom-right-radius: 12px;
         }
         .insight{
-            color: rgb(142, 6, 142);
+            color:#9e66cc;
         }
         .container{
-            display: flex;
-            background: rgb(32, 10, 32);
-            /* padding: 25px; */
-            width: 700px;
+            display: flex;      
+            /* width: 800px;
+            height: 290px; */
+            border-radius: 12px;
+            flex-direction: row-reverse;
+           /* cuts everything that is overflowing */
+            overflow: hidden;  
         }
-        h2{
-            font-size:  30px;
+        .social-media-spec{
+            display:flex;
+            justify-content : space-between;
         }
-        .para{
-            display: flex;
-            
+        .social-media-info{
+            text-transform: uppercase;
+            font-size: 12px;
+            margin-top: 3px;
         }
+        .heading{
+            font-weight: 700;
+        }
+        .social_media-number{
+            color: white;
+            margin-bottom: 0px;;
+        }
+        .social-info{
+            background:#1c1938;
+            padding: 25px;
+        }
+        .image-color{
+            background:#9e66cc ;
+            height: 400px;
+            /* blending to with the background */
+            mix-blend-mode: color-dodge;
+        }
+
     </style>
 </head>
 <body>
    <section class = container>
-    <div class='text'>
-    <h2>Get <span class="insight">insights</span> that help grow your business</h2>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam, unde.</p>
-    <div class="para"><p>10k+ companies</p><p>314 Templates</p><p>12M+ Queries</p></div>
-</div>
-    <div class="image">   
-    <img src="https://www.greatplacetowork.com/images/blog-images/articles/purpose_at_work.webp" />
+    <div class="image-color"><img src="https://www.greatplacetowork.com/images/blog-images/articles/purpose_at_work.webp" /></div>
+    <div class="social-info">
+        <div class='heading'>
+            <h2>Get <span class="insight">insights</span> that help grow your business</h2>
+        </div>
+        <p>Discover the benefits of data analytics and make a better decison regarding revenue, customer experience, and overall efficiency.</p>
+            <div class="Social-media-spec">
+                <div  class="social-media-info">
+                    <p>10k+</p>
+                    <p>companies</p>
+                </div>
+                <div class="social-media-info">
+                    <p>314</p>
+                    <p>Templates</p>
+                </div>
+                <div  class="social-media-info">
+                    <p class='social-media-number'>12M+</p>
+                    <p>queries</p>
+                </div>
+            </div>
     </div>
-</section>
+    </section>
 </body>
 </html>
