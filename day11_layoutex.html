@@ -12,80 +12,50 @@
            place-content: center;
            min-height: 100vh;
            background-color: #0a0c1b;
-           font-family: sans-serif;
         }
         img{
-            height: 400px;
+            height: 290px;
             /* opacity: 0.3;
               filter: alpha(opacity=40); /* msie */
               background-color: rgb(30, 8, 30); 
               mix-blend-mode: lighten;
-              border-top-right-radius: 12px;
-              border-bottom-right-radius: 12px;
+              /* border-radius: 12px; */
         }
         .insight{
             color:#9e66cc;
         }
         .container{
-            display: flex;      
-            /* width: 800px;
-            height: 290px; */
-            border-radius: 12px;
-            flex-direction: row-reverse;
-           /* cuts everything that is overflowing */
-            overflow: hidden;  
-        }
-        .social-media-spec{
-            display:flex;
-            justify-content : space-between;
-        }
-        .social-media-info{
-            text-transform: uppercase;
-            font-size: 12px;
-            margin-top: 3px;
-        }
-        .heading{
-            font-weight: 700;
-        }
-        .social_media-number{
-            color: white;
-            margin-bottom: 0px;;
-        }
-        .social-info{
+            display: flex;
             background:#1c1938;
-            padding: 25px;
+            /* padding: 25px; */
+            width: 800px;
+            height: 290px;
+            border-radius: 12px;
         }
-        .image-color{
-            background:#9e66cc ;
-            height: 400px;
-            /* blending to with the background */
-            mix-blend-mode: color-dodge;
+        h2{
+            font-size:  30px;
+        }
+        .text{
+            padding:20px;
+        }
+        .para{
+            display: flex;          
+        }
+        .bottom{
+            text-align: center;
         }
 
     </style>
 </head>
 <body>
    <section class = container>
-    <div class="image-color"><img src="https://www.greatplacetowork.com/images/blog-images/articles/purpose_at_work.webp" /></div>
-    <div class="social-info">
-        <div class='heading'>
-            <h2>Get <span class="insight">insights</span> that help grow your business</h2>
-        </div>
-        <p>Discover the benefits of data analytics and make a better decison regarding revenue, customer experience, and overall efficiency.</p>
-            <div class="Social-media-spec">
-                <div  class="social-media-info">
-                    <p>10k+</p>
-                    <p>companies</p>
-                </div>
-                <div class="social-media-info">
-                    <p>314</p>
-                    <p>Templates</p>
-                </div>
-                <div  class="social-media-info">
-                    <p class='social-media-number'>12M+</p>
-                    <p>queries</p>
-                </div>
-            </div>
+    <div class='text'>
+    <h2>Get <span class="insight">insights</span> that help grow your business</h2>
+    <p>Discover the benefits of data analytics and make a better decison regarding revenue, customer experience, and overall efficiency.</p>
+    <div class="para"><p class="bold">10k+ <span class="bottom"><br/>companies</span></p><p class="bold">314<br/> Templates</p><p class="bold">12M+ <br/>Queries</p></div>
+     </div>
+    <div class="image">   
+    <img src="https://www.greatplacetowork.com/images/blog-images/articles/purpose_at_work.webp" />
     </div>
     </section>
 </body>
