@@ -31,11 +31,20 @@
         display: grid;
         place-content: center;
         min-height: 100vh;
+ 
+        /* background-image: linear-gradient(
+          to right top,
+          #051937,
+          #33275d,
+          #6f2d78,
+          #b12681,
+          #f01a78
+        ); */
       }
  
       .social-media-spec {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         font-size: 20px;
       }
  
@@ -51,12 +60,13 @@
       .stats-preview {
         background: hsl(244, 38%, 16%);
         /* background: hsl(277, 64%, 61%); */
+        /* grid-row-end: auto; */
         display: grid;
-        flex-direction: row-reverse;
+        grid-column-start: 0;
+        grid-template-columns: 1fr 1fr;
         align-items: center;
-        max-width: 900px;
- 
-        border-radius: 10px;
+        max-width: 1000px; 
+         border-radius: 10px;
         overflow: hidden;
       }
  
@@ -94,10 +104,19 @@
         height: 400px;
         mix-blend-mode: luminosity;
       }
+      @media (min-width: 420px){
+            .stats-preview{
+                grid-template-columns: 1fr 1fr;
+            }
+            .social-media-spec{
+              grid-template-columns: 1fr 1fr 1fr;
+              text-align: center;
+            }
+        } 
     </style>
   </head>
   <body>
-    <section class="stats-preview">
+    <section class="stats-preview" class="grid">
       <div class="image-container">
         <img class="stat-img" src="https://www.greatplacetowork.com/images/blog-images/articles/purpose_at_work.webp" />
       </div>

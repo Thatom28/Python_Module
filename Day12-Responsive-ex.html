@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -31,12 +30,21 @@
         display: grid;
         place-content: center;
         min-height: 100vh;
+ 
+        /* background-image: linear-gradient(
+          to right top,
+          #051937,
+          #33275d,
+          #6f2d78,
+          #b12681,
+          #f01a78
+        ); */
       }
  
       .social-media-spec {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        font-size: 20px;
+        grid-template-columns: 1fr;
+         text-align: center;
+        
       }
  
       .social-media-info {
@@ -52,12 +60,8 @@
         background: hsl(244, 38%, 16%);
         /* background: hsl(277, 64%, 61%); */
         display: grid;
-        flex-direction: row-reverse;
-        align-items: center;
-        max-width: 900px;
- 
-        border-radius: 10px;
-        overflow: hidden;
+        grid-template-columns: 1fr;
+        text-align: center;
       }
  
       .topic-content {
@@ -94,12 +98,43 @@
         height: 400px;
         mix-blend-mode: luminosity;
       }
+      @media(min-width:471px){
+        .social-media-spec{
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+            text-align: left;
+            width: auto;
+          }
+      }
+      @media (min-width: 900px){
+          .stats-preview{
+              grid-template-columns: 1fr 1fr;
+              display: flex;
+              flex-direction: row-reverse;
+              align-items: center;
+              max-width: 1000px;
+              border-radius: 10px;
+              overflow: hidden;
+          }
+          .stat-img{
+            width: auto;
+          }
+          .social-info, .topic-content, .topic-heading{
+            text-align: center;
+          }
+          .social-media-spec{
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+          }
+        } 
     </style>
   </head>
   <body>
     <section class="stats-preview">
       <div class="image-container">
-        <img class="stat-img" src="https://www.greatplacetowork.com/images/blog-images/articles/purpose_at_work.webp" />
+        <img class="stat-img" src="https://www.greatplacetowork.com/images/blog-images/articles/purpose_at_work.webp"  alt="" />
       </div>
       <div class="social-info">
         <h2 class="topic-heading">
@@ -128,4 +163,3 @@
     </section>
   </body>
 </html>
- 

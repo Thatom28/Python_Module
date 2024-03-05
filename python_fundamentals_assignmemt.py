@@ -11,7 +11,7 @@ students.sort(key=lambda s: s["grade"], reverse=True)
 for student in students:
     student["rank"] = rank
     rank += 1
-    # print(student)
+    print(student)
 
 # -------Question 2: Merging data from two lists
 employees = [{"id": 1, "name": "Alice"}, {"id": 2, "name": "Bob"}]
@@ -33,7 +33,7 @@ combined_list = [
     for salary in salaries
     if employee["id"] == salary["id"]
 ]
-# print(combined_list)
+print(combined_list)
 
 # ---------Question 3: advanced filtering with multiple conditions
 products = [
@@ -47,7 +47,7 @@ filtered_product = []
 for product in products:
     if product["category"] == "Electronics" and product["price"] < 500:
         filtered_product.append(product)
-# print(filtered_product)
+print(filtered_product)
 
 # using list comprehension
 filtered_product = [
@@ -55,7 +55,7 @@ filtered_product = [
     for product in products
     if product["category"] == "Electronics" and product["price"] < 500
 ]
-# print(filtered_product)
+print(filtered_product)
 
 # -------Question 4: Complex data transformation
 orders = [
@@ -80,7 +80,7 @@ for order in orders:
         else:
             prod_dict[product_name] += product_quantity
 # check if keys are identical add onto it
-# print(prod_dict)
+print(prod_dict)
 
 # -----Question 5:Consolidation and Summarization
 summary = {}
@@ -98,7 +98,7 @@ for transaction in transactions:
     else:
         summary[category] = amount
 
-# print(summary)
+print(summary)
 
 # -------Question 6: Grouping and Aggregating Data
 sales = [
@@ -116,7 +116,7 @@ for sale in sales:
         grouping[salesperson] = amount
     else:
         grouping[salesperson] += amount
-# print(grouping)
+print(grouping)
 
 
 # --------Qustion 7:Lambda Functions for Spell Power
@@ -124,13 +124,13 @@ spells = [("Lumos", 5), ("Obliviate", 10), ("Expelliarmus", 7)]
 # Expected Task: Sort the spells list by power level in descending
 # order using a lambda function
 spells.sort(key=lambda x: x[1], reverse=True)
-# print(spells)
+print(spells)
 
 # ---------Question 8: Map Transformation for Potion Ingredients
 ingredients = ["Wolfsbane", "Eye of Newt", "Dragon Scale"]
 # Expected Task: Use `map` to append ": 3 grams" to each ingredient.
 grams = list(map(lambda x: x + ": 3 grams", ingredients))
-# print(grams)
+print(grams)
 
 # ---------Qustion 9: Magical Book Filter and Formatter
 books = [
@@ -144,7 +144,7 @@ filtered_list = [
     for book in books
     if book["pages"] > 120
 ]
-# print(filtered_list)
+print(filtered_list)
 
 
 # ---------Qustion 10: Wizard Duel Game Class
@@ -178,7 +178,7 @@ initial_health = 20
 duel = WizardDuel(harry, draco, initial_health, initial_health)
 duel.cast_spell(harry, 10)
 duel.cast_spell(draco, 15)
-# print(duel.deter_winner())
+print(duel.deter_winner())
 
 
 # ---------Question 11: Custom Error Handling in Potion Making
@@ -202,7 +202,7 @@ def potion_making(ingredient):
         print(e)
 
 
-# print(potion_making("eye"))
+print(potion_making("eye"))
 
 # ---------Question 12: Hogwarts Library Database Query
 library = [
@@ -211,7 +211,7 @@ library = [
 ]
 # Expected Task: Use a list comprehension to select books written by Bathilda Bagshot.
 book_filter = [book for book in library if book["author"] == "Bathilda Bagshot"]
-# print(book_filter)
+print(book_filter)
 
 # ---------Question 13: Hogwarts House Points Calculator
 house_points = [
@@ -231,7 +231,7 @@ for house in house_points:
     else:
         total_points[house_name] += no_points
 
-# print(total_points)
+print(total_points)
 
 
 # ---------Question 14: Class Inheritance for Magical Creatures
@@ -257,8 +257,8 @@ class Unicorn(Magical_Creatures):
 
 firey = Dragon().sound()
 sora = Unicorn().sound()
-# print(sora)
-# print(firey)
+print(sora)
+print(firey)
 
 # ---------Question 15: Custom Sorting with Lambda for Magical Artifacts
 artifacts = [
@@ -270,7 +270,7 @@ artifacts = [
 sorted_by_age_and_power = [
     sorted(artifacts, key=lambda artifact: (artifact["age"], artifact["power"]))
 ]
-# print(sorted_by_age_and_power)
+print(sorted_by_age_and_power)
 
 # ---------Question 16: Wizard Profile Generator with f-strings
 
@@ -296,7 +296,7 @@ list_cre = list(
         adopter_creature,
     )
 )
-# print(list_cre)
+print(list_cre)
 
 
 # ---------Question 18: Advanced Potion Making with Nested Loops
@@ -323,7 +323,7 @@ def potionMaking(ingredients):
 
 
 potion = potionMaking(["Moonstone", "Silver Dust"])
-# print(potion)
+print(potion)
 
 # ---------Question 19: Nested Data Manipulation
 data = [
@@ -349,4 +349,4 @@ tasks = [
 # Expected Task: Sort the tasks by "completed" status (False first)
 # and then by priority ("High", "Medium", "Low").
 sorted_list = sorted(tasks, key=lambda task: (task["completed"], task["priority"]))
-# print(sorted_list)
+print(sorted_list)
