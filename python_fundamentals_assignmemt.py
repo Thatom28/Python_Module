@@ -151,21 +151,58 @@ filtered_list = [
 class WizardDuel:
     # Expected Task: Implement a class with methods for casting spells,
     # reducing health points, and determining the winner
-    def __init__(self, spell, health_points):
-        self.spell = spell
-        self.health_points = health_points
+    def __init__(self, wizard1, wizard2, health_points1, health_points2):
+        self.wizard1 = wizard1
+        self.wizard2 = wizard2
+        self.health_points1 = health_points1
+        self.health_points2 = health_points2
 
-    def cast_spell(self):
-        pass
+    def cast_spell(self, wizard, damage):
+        if wizard == self.wizard1:
+            self.health_points2 -= damage
+        else:
+            self.health_points1 -= damage
 
-    def reduce_health_points(self):
-        pass
+    def deter_winner(self):
+        if self.health_points1 > self.health_points2:
+            return f"After the deul between {self.wizard1} and {self.wizard2}, {self.wizard1} wins with {self.health_points1} points left"
+        elif self.health_points1 < self.health_points2:
+            return f"After the deul between {self.wizard1} and {self.wizard2}, {self.wizard2} wins with {self.health_points2} points left"
+        else:
+            return "Its a tie"
 
-    def deter_winner(self, health_points):
-        pass
+
+harry = "Harry"
+draco = "Draco"
+initial_health = 20
+duel = WizardDuel(harry, draco, initial_health, initial_health)
+duel.cast_spell(harry, 10)
+duel.cast_spell(draco, 15)
+# print(duel.deter_winner())
 
 
 # ---------Question 11: Custom Error Handling in Potion Making
+class PotionError(Exception):
+    def __init__(self, value):
+        self.value = value
+        self.message = "Eye is not a valid ingredient for the Love Potion."
+        super().__init__(self.message)
+
+    def __str__(self):
+        return f"{self.value} -> {self.message}"
+
+
+def potion_making(ingredient):
+    try:
+        if ingredient != "eye":
+            return "Love potion making was a success"
+        else:
+            raise PotionError(ingredient)
+    except PotionError as e:
+        print(e)
+
+
+# print(potion_making("eye"))
 
 # ---------Question 12: Hogwarts Library Database Query
 library = [
@@ -198,6 +235,30 @@ for house in house_points:
 
 
 # ---------Question 14: Class Inheritance for Magical Creatures
+# Expected Task: Create a base class `MagicalCreature`
+# and subclasses `Dragon`, `Unicorn`. Each subclass should have a unique `sound` method.
+class Magical_Creatures:
+    def __init__(self):
+        pass
+
+    def sound(self):
+        return "some sound"
+
+
+class Dragon(Magical_Creatures):
+    def sound(self):
+        return "ROOOAAARRS"
+
+
+class Unicorn(Magical_Creatures):
+    def sound(self):
+        return "YOOO NUHHH"
+
+
+firey = Dragon().sound()
+sora = Unicorn().sound()
+# print(sora)
+# print(firey)
 
 # ---------Question 15: Custom Sorting with Lambda for Magical Artifacts
 artifacts = [
@@ -206,6 +267,86 @@ artifacts = [
     {"name": "Resurrection Stone", "age": 800, "power": 7},
 ]
 # Expected Task: Sort the artifacts first by age, then by power, using a lambda function.
-sorted_by_age = [artifacts.sort(key=lambda artifact: artifact["age"])]
-sorted_by_power = sorted_by_age.sort(key=lambda x: x["power"])
-print(artifacts)  # fix
+sorted_by_age_and_power = [
+    sorted(artifacts, key=lambda artifact: (artifact["age"], artifact["power"]))
+]
+# print(sorted_by_age_and_power)
+
+# ---------Question 16: Wizard Profile Generator with f-strings
+
+wizard = {"name": "Albus Dumbledore", "title": "Headmaster", "house": "Gryffindor"}
+# Expected Task: Use an f-string to create a profile string that includes the wizard's name, title, and house.
+# print(f'{wizard["name"]}, {wizard["title"]} of {wizard["house"]}.')
+
+# ---------Question 17: Magical Creature Adoption Matching
+
+adopters = [("Harry", "Phoenix"), ("Hermione", "House Elf")]
+creatures = [("Fawkes", "Phoenix"), ("Dobby", "House Elf"), ("Buckbeak", "Hippogriff")]
+# Expected Task: Use `filter` and `map` to create a list of matches between adopters and creatures.
+
+adopter_creature = filter(
+    lambda creature: creature[1] in [adopter[1] for adopter in adopters], creatures
+)
+list_cre = list(
+    map(
+        lambda creature: (
+            creature[0],
+            [adopter[0] for adopter in adopters if adopter[1] == creature[1]][0],
+        ),
+        adopter_creature,
+    )
+)
+# print(list_cre)
+
+
+# ---------Question 18: Advanced Potion Making with Nested Loops
+ingredients = ["Moonstone", "Silver Dust", "Dragon Blood"]
+
+
+# Expected Task: For each pair of ingredients, print out the
+# unique potion they produce.
+
+
+def potionMaking(ingredients):
+    if "Moonstone" in ingredients and "Silver Dust" in ingredients:
+        return f"combining {ingredients[0]} and {ingredients[1]} produces a Visibillity potion"
+    elif "Moonstone" in ingredients and "Dragon Blood" in ingredients:
+        return (
+            f"combining {ingredients[0]} and {ingredients[1]} produces an aging potion"
+        )
+    elif "Silver Dust" in ingredients and "Dragon Blood" in ingredients:
+        return f"combining {ingredients[0]} and {ingredients[1]} produces a love potion"
+    else:
+        return (
+            f"combining {ingredients[0]} and {ingredients[1]} does not produce a potion"
+        )
+
+
+potion = potionMaking(["Moonstone", "Silver Dust"])
+# print(potion)
+
+# ---------Question 19: Nested Data Manipulation
+data = [
+    {"id": 1, "name": "Item 1", "tags": ["tag1", "tag2"]},
+    {"id": 2, "name": "Item 2", "tags": ["tag2", "tag3"]},
+    {"id": 3, "name": "Item 3", "tags": ["tag1", "tag3"]},
+]
+# Expected Task: For each item, add a new tag "tag4" only if
+# "tag1" is present in the tags list.
+for d in data:
+    if "tag1" in d["tags"]:
+        d["tags"] += {"tag4"}
+# print(data)
+
+# ---------Question 20: Implementing a Custom Sort Function
+tasks = [
+    {"id": 1, "priority": "High", "completed": False},
+    {"id": 2, "priority": "Low", "completed": True},
+    {"id": 3, "priority": "Medium", "completed": False},
+]
+
+
+# Expected Task: Sort the tasks by "completed" status (False first)
+# and then by priority ("High", "Medium", "Low").
+sorted_list = sorted(tasks, key=lambda task: (task["completed"], task["priority"]))
+# print(sorted_list)
