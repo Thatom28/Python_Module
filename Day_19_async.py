@@ -16,7 +16,7 @@ async def hello_world():  # when you marks they can pass this method and  pass a
 # 3 2 1 Happy new year
 
 
-async def new_year():
+async def new_year():  # type = coroutine
     print("3")
     await asyncio.sleep(1)
     print("2")
@@ -128,7 +128,7 @@ async def main():
     # moved to the pause area
     task = asyncio.create_task(background_task())  # execute concurrently
     # await background_task()
-    # waiting for the backgound to execute before executing these lines
+    # executing these lines because background is paused
     print("Main function says - Hi")
     print("Main function says - Hi")
     print("Main function says - Hi")
@@ -162,7 +162,7 @@ async def main():
     print("Bread toasting 2🍞")
     print("Bread toasting 3🍞")
     # only waits for the time on task1
-    await task1
+    await task2
 
 
 # asyncio.run(main())
@@ -226,11 +226,11 @@ async def main():
     task3 = asyncio.create_task(make_cereal())
     all_tasks = [task1, task2, task3]
     # await background_task()
-    # waiting for the backgound to execute before executing these lines
+
     print("Bread toasting 1🍞")
     print("Bread toasting 2🍞")
     print("Bread toasting 3🍞")
-    # Can be used with unpacking
+    # Can be used with unpacking operaror (*)
     # await asyncio.gather(task1, task2, task3)
     await asyncio.gather(*all_tasks)
 
@@ -256,25 +256,28 @@ async def make_coffee():
 
 async def make_cereal():
     print("Making Cereal bowl 🧃")
-    await asyncio.sleep(5)
+    await asyncio.sleep(7)
     print("Cereal done ✅")
     return f"Data - Cereal 🧃"
 
 
 async def main():
     # Request to event loop to schedule
-    # schedule happenes here
+    # schedule happenes here when create_task is written
     all_tasks = [
         asyncio.create_task(cooking_eggs()),
         asyncio.create_task(make_coffee()),
         asyncio.create_task(make_cereal()),
     ]
-
-    # Waiting for the background_task
     print("Bread Toast 1")
     print("Bread Toast 2")
     print("Bread Toast 3")
     print("Bread Toast 4")
+    # the other tasks will be executed in the mean time because the call stack is empty during the sleep
+    # and because tasks are already scheduled
+    print("Sleep started")
+    await asyncio.sleep(6)
+    print("sleep ended")
 
     #  Wait till the longest one completes
     # await asyncio.gather(all_tasks[0], all_tasks[1],  all_tasks[2])
@@ -283,7 +286,7 @@ async def main():
     print(data)
 
 
-# asyncio.run(main())
+asyncio.run(main())
 
 
 # -------------------------------------------------------------------------
@@ -326,6 +329,7 @@ async def main():
     print("Bread Toast 4")
 
     # this will make the tasks wait 6 seconds before the scheduling happens
+    # therefore every async task will be paused until sleep ends
     print("Sleep started")
     await asyncio.sleep(6)
     print("sleep ended")
@@ -335,7 +339,8 @@ async def main():
     # Order of data == Order given in create_task
     # only schedule here
     data = await asyncio.gather(*all_coroutines)
+    # you can only print what you returned
     print(data)
 
 
-asyncio.run(main())
+# asyncio.run(main())

@@ -18,8 +18,10 @@ TOKEN = "f06fdf2d66c24a91a6c93111241503"
 
 # print(get_city_temp("capeTown"))
 
+# ------------------------------------------------------------------------------------------------------
 
-async def get_city_name(city_name):
+
+async def get_city_temp(city_name):
     print(f"getting temp of {city_name}")
     await asyncio.sleep(2)
     async with aiohttp.ClientSession() as session:
@@ -32,20 +34,21 @@ async def get_city_name(city_name):
 
 
 # task
-# async def main():
-#     all_cities = [
-#         get_city_name("cape town"),
-#         get_city_name("durban"),
-#         get_city_name("pretoria"),
-#     ]
-# scheduling starts here
-#     await asyncio.gather(*all_cities)
+async def main():
+    all_cities = [
+        get_city_temp("cape town"),
+        get_city_temp("durban"),
+        get_city_temp("pretoria"),
+    ]
+    # scheduling starts here
+    await asyncio.gather(*all_cities)
+
 
 # asyncio.run(main())
+# -----------------------------------------------------------------------------------------------------------------
 
-
-# task 2
-##cities =[] and crete a task
+# TASK 2
+##cities =[] and create a task
 # 2s + 0.2 api
 start_time = time()
 
@@ -53,9 +56,9 @@ start_time = time()
 # scheduling starts here
 async def main():
     all_cities_tasks = [
-        asyncio.create_task(get_city_name("cape town")),
-        asyncio.create_task(get_city_name("durban")),
-        asyncio.create_task(get_city_name("pretoria")),
+        asyncio.create_task(get_city_temp("cape town")),
+        asyncio.create_task(get_city_temp("durban")),
+        asyncio.create_task(get_city_temp("pretoria")),
     ]
     await asyncio.gather(*all_cities_tasks)  # it passes each city_task
 
@@ -63,8 +66,9 @@ async def main():
 # asyncio.run(main())
 end_time = time()
 # print(f"taken time ={end_time - start_time}")
+# ---------------------------------------------------------------------------------------------------------------------
 
-# Task 3 : list comprehension
+# TASK 3 : USING LIST COMPREHENSION
 # Dry
 cities = [
     "New York",
@@ -81,14 +85,16 @@ cities = [
 # start_time = time()
 
 
-# async def main():
-#     all_cities_tasks = [get_city_name(city_name) for city_name in cities]
-#     await asyncio.gather(*all_cities_tasks)
+async def main():
+    await asyncio.gather(*(get_city_temp(city_name) for city_name in cities))
+    # all_cities_tasks = [get_city_temp(city_name) for city_name in cities]
+    # await asyncio.gather(*all_cities_tasks)
 
 
-# # asyncio.run(main())
-# end_time = time()
-# print(f"taken time ={end_time - start_time}")
+asyncio.run(main())
+end_time = time()
+print(f"taken time ={end_time - start_time}")
+
 # -------------------------------------------------------------------------------------------------------
 # Create a function that takes a list of cities provide the corrosponding temperature in a dictionary
 
@@ -135,14 +141,6 @@ cities = [
 
 # ------------------------------------------------------------------------------------------------
 # RAGAV SOLUTION
-async def get_city_name_temp(city_name):
-    print(f"Getting temp of {city_name}")
-    url = f"https://api.weatherapi.com/v1/current.json?key={TOKEN}&q={city_name}&aqi=no"
-    async with aiohttp.ClientSession() as session:
-        async with session.get(url) as response:
-            weather = await response.json()
-            return (weather["location"]["name"], weather["current"]["temp_c"])
-
 
 # async def main(cities):
 #     # print(await get_city_name_temp("New York"))
@@ -156,9 +154,10 @@ async def get_city_name_temp(city_name):
 
 # Performance
 async def main(cities):
-    cities_data_co_current = [get_city_name_temp(city) for city in cities]
+    cities_data_co_current = [get_city_temp(city) for city in cities]
+    # gather parameter is a coroutine(async function) or a task
     cities_data = await asyncio.gather(*cities_data_co_current)
     pprint(dict(cities_data))
 
 
-asyncio.run(main(cities))
+# asyncio.run(main(cities))
